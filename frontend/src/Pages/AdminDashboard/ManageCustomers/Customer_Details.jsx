@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import SideNavBar from '../components/Dashboards/SideNavBar';
-import Header from '../components/Dashboards/Header';
-import ConfirmationPopup from "../components/Confirmations/CusDeleteConfirm";
-import SideNavLinks from "../components/Dashboards/SideNavLinks/SideNavLinks";
+import SideNavBar from '../../../components/Dashboards/SideNavBar';
+import Header from '../../../components/Dashboards/Header';
+import ConfirmationPopup from "../../../components/Confirmations/CusDeleteConfirm";
+import SideNavLinks from "../../../components/Dashboards/SideNavLinks/SideNavLinks";
 
 export default function CustomerDetails() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
