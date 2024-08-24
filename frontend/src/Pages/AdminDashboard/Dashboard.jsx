@@ -1,6 +1,6 @@
 import React from 'react';
-import SideNavBar from '../components/Dashboards/SideNavBar';
-import Header from '../components/Dashboards/Header';
+import SideNavBar from '../../components/Dashboards/SideNavBar';
+import Header from '../../components/Dashboards/Header';
 
 export default function AdminDashboard() {
   return (

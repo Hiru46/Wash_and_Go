@@ -1,15 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Dashboard from './Pages/Dashboard.jsx'
+import Dashboard from './Pages/AdminDashboard/Dashboard.jsx'
 import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Packages_Dashboard from './Pages/Packages_Dashboard.jsx'
-import Add_Package from './Pages/Add_Package.jsx'
-import Cus_Details from './Pages/Customer_Details.jsx'
-import Update_Package from './Pages/Update_Package.jsx'
+import Packages_Dashboard from './Pages/AdminDashboard/ServicePackages/Packages_Dashboard.jsx'
+import Add_Package from './Pages/AdminDashboard/ServicePackages/Add_Package.jsx'
+import Cus_Details from './Pages/AdminDashboard/ManageCustomers/Customer_Details.jsx'
+import Update_Package from './Pages/AdminDashboard/ServicePackages/Update_Package.jsx'
 
 const router = createBrowserRouter([
   {

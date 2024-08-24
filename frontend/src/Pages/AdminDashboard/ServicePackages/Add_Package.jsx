@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SideNavBar from '../components/Dashboards/SideNavBar';
-import Header from '../components/Dashboards/Header';
+import SideNavBar from '../../../components/Dashboards/SideNavBar';
+import Header from '../../../components/Dashboards/Header';
 
 export default function AddPackage() {
 
