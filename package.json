@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "mongoose": "^8.5.3"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "frontend": "npm run dev --prefix ./frontend",
+    "backend": "cd backend && nodemon index.js"
+  },
+  "name": "wash-and-go",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
