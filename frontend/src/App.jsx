@@ -4,6 +4,7 @@ import HeroSection from './Pages/Home/HeroSection'
 import AboutSection from './Pages/Home/AboutSection'
 import Offer from './Pages/Home/Offer'
 import Footer from './components/Footer/Footer'
+import PackageSection from './Pages/Home/PackageSection'
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
 
             <HomeNavbar />
             <HeroSection />
+            <PackageSection />
             <AboutSection />
             <Offer />
             <Footer />
