@@ -1,0 +1,15 @@
+[
+    { "month": "Jan", "registered_customers": 150 },
+    { "month": "Feb", "registered_customers": 180 },
+    { "month": "Mar", "registered_customers": 210 },
+    { "month": "Apr", "registered_customers": 240 },
+    { "month": "May", "registered_customers": 300 },
+    { "month": "Jun", "registered_customers": 280 },
+    { "month": "Jul", "registered_customers": 320 },
+    { "month": "Aug", "registered_customers": 340 },
+    { "month": "Sep", "registered_customers": 360 },
+    { "month": "Oct", "registered_customers": 380 },
+    { "month": "Nov", "registered_customers": 400 },
+    { "month": "Dec", "registered_customers": 420 }
+  ]
+  
