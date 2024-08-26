@@ -15,7 +15,7 @@ export default function AdminDashboard() {
       <div className="flex-1 flex flex-col">
         <Header />
 
-        <div className='mt-10 bg-slate-500 text-center p-3 text-2xl font-bold'>
+        <div className='mt-10 bg-white ms-10 p-3 text-2xl font-bold'>
           <h1>ADMIN DASHBOARD</h1>
         </div>
 
