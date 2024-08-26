@@ -13,8 +13,8 @@ function App() {
 
             <HomeNavbar />
             <HeroSection />
-            <PackageSection />
             <AboutSection />
+            <PackageSection />
             <Offer />
             <Footer />
 
