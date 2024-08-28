@@ -13,7 +13,7 @@ export default function SideNavBar() {
         <ul className="space-y-5 font-bold text-xl text-center">
         
           <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
-            <SideNavLinks linkName="DASHBOARD" url="/" className=""/>
+            <SideNavLinks linkName="DASHBOARD" url="/dashboard" className=""/>
           </li>
           <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
             <SideNavLinks linkName="CUSTOMER DETAILS" url="/cus_details"/>

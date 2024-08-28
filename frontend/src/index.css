@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.angled-rectangle1 {
+    clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+}
+
+.angled-rectangle2 {
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+}
