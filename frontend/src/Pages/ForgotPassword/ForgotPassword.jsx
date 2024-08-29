@@ -34,7 +34,7 @@ function ForgotPassword() {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#c42703]"
+                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#006AFF]"
                             placeholder="Enter your email"
                         />
                     </div>
@@ -46,7 +46,7 @@ function ForgotPassword() {
                             id="mobile"
                             value={mobile}
                             onChange={(e) => setMobile(e.target.value)}
-                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#c42703]"
+                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#006AFF]"
                             placeholder="Enter your mobile number"
                         />
                     </div>
@@ -59,7 +59,7 @@ function ForgotPassword() {
                                 id="otp"
                                 value={otp}
                                 onChange={(e) => setOtp(e.target.value)}
-                                className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#c42703]"
+                                className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#006AFF]"
                                 placeholder="Enter the OTP"
                             />
                         </div>
@@ -68,15 +68,16 @@ function ForgotPassword() {
                     <div className="flex items-center justify-center">
                         <button
                             type="submit"
-                            className="bg-[#c42703] text-white font-semibold py-2 px-4 rounded-md shadow-lg w-full hover:bg-[#a11e01] transition duration-300"
+                            className="bg-[#006AFF] text-white font-semibold py-2 px-4 rounded-md shadow-lg w-full hover:bg-[#004a99] transition duration-300"
                         >
                             {otpSent ? 'Verify OTP' : 'Send OTP'}
                         </button>
                     </div>
                 </form>
-                <div className="mt-4 text-center">
-                    <Link to="/Login"> <div className="text-[#c42703] font-semibold hover:underline">
-                        Remembered your password? Log in
+                <div className="mt-4   flex  justify-center font-semibold">
+                    <div>Remembered your password?  </div>
+                    <Link to="/Login"> <div className="text-[#006AFF] font-semibold hover:underline">
+                        Log in
                     </div>
                     </Link>
                 </div>

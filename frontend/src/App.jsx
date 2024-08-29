@@ -13,13 +13,14 @@ function App() {
 
             <HomeNavbar />
             <HeroSection />
+
             <AboutSection />
             <PackageSection />
             <Offer />
             <Footer />
 
 
-        </div>
+        </div >
     )
 }
 

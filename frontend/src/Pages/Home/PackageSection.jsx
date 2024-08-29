@@ -10,7 +10,7 @@ function PackageSection() {
                 <div className="w-full md:w-[48%] mb-6 md:mb-0  rounded-lg overflow-hidden flex-grow ">
                     <div className="grid h-full grid-cols-1 gap-4 p-4 md:grid-cols-2">
                         <div className="p-4 transition-transform duration-300 ease-in-out rounded-lg shadow-md bg-gradient-to-r from-slate-200 via-gray-100 to-slate-200 hover:scale-95 ">
-                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#eb3301]">
+                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#006AFF]">
                                 Nano Treatments
                             </h1>
                             <div className="p-2">
@@ -19,20 +19,20 @@ function PackageSection() {
                                 </div>
                                 <ul className=" mt-2 font-bold text-gray-700">
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             {/* Replace with custom SVG icon */}
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">RESISTANCE</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">DURABILITY</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">EFFECT</li>
@@ -41,7 +41,7 @@ function PackageSection() {
                             </div>
                         </div>
                         <div className="p-4 transition-transform duration-300 ease-in-out border rounded-lg shadow-md hover:scale-95 bg-gradient-to-r from-slate-200 via-gray-100 to-slate-200 ">
-                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#eb3301]">
+                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#006AFF]">
                                 ENGINE TUNE-UPS
                             </h1>
                             <div className="p-2">
@@ -50,19 +50,19 @@ function PackageSection() {
                                 </div>
                                 <ul className="mt-2 font-bold text-gray-700">
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Intake Manifold De-carbonizing</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Spark Plug Check & inspection</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">
@@ -73,7 +73,7 @@ function PackageSection() {
                             </div>
                         </div>
                         <div className="p-4 transition-transform duration-300 ease-in-out border rounded-lg shadow-md hover:scale-95 bg-gradient-to-r from-slate-200 via-gray-100 to-slate-200 ">
-                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#eb3301]">
+                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#006AFF]">
                                 LUBE SERVICES
                             </h1>
                             <div className="p-2">
@@ -82,19 +82,19 @@ function PackageSection() {
                                 </div>
                                 <ul className="mt-2 font-bold text-gray-700">
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Inspections of the oil tank</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Fluid change</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">New oil filter</li>
@@ -103,7 +103,7 @@ function PackageSection() {
                             </div>
                         </div>
                         <div className="p-4 transition-transform duration-300 ease-in-out rounded-lg shadow-md bg-gradient-to-r from-slate-200 via-gray-100 to-slate-200 hover:scale-95">
-                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#eb3301]">
+                            <h1 className="animated-text text-xl md:text-2xl font-bold text-center text-[#006AFF]">
                                 Wheel Alignment
                             </h1>
                             <div className="p-2">
@@ -114,7 +114,7 @@ function PackageSection() {
                                 </div>
                                 <ul className="mt-2 font-bold text-gray-700">
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">
@@ -122,13 +122,13 @@ function PackageSection() {
                                         </li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Improved fuel efficiency</li>
                                     </div>
                                     <div className="flex items-center py-2">
-                                        <span className="text-[#eb3301] text-2xl">
+                                        <span className="text-[#386097] text-2xl">
                                             <AiTwotoneThunderbolt />
                                         </span>
                                         <li className="ml-2">Smooth and comfortable ride</li>
@@ -163,7 +163,7 @@ function PackageSection() {
                             receives the best care possible...
                         </div>
                         <div className="flex justify-center w-full mt-4">
-                            <button className="view-more-btn px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#eb3301] to-[#d12a01] text-white font-bold rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                            <button className="view-more-btn px-6 py-3 md:px-8 md:py-4 bg-[#006AFF] text-white font-bold rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
                                 View More
                             </button>
                         </div>

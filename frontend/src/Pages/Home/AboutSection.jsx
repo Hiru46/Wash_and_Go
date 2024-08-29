@@ -54,42 +54,42 @@ function AboutSection() {
 
                         <div className="grid grid-cols-2 gap-4 font-bold">
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Great Depression.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Repair Domination.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Expertise & Innovation.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Great Innovation.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Leading Industrial.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>From Unlikely Sources.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Quality Immediately.</div>
                             </div>
 
                             <div className="flex items-center mt-5 text-xl">
-                                <IoCheckmarkSharp className="text-red-500" />
+                                <IoCheckmarkSharp className="text-[#006AFF]" />
                                 <div>Blah Into Fantastic.</div>
                             </div>
                         </div>
@@ -99,28 +99,28 @@ function AboutSection() {
 
             <div className="h-[14.9vh] mt-[2vh] w-full bg-black flex items-center justify-center gap-[9%] text-white">
                 <div className="w-[210px] text-center">
-                    <div className="text-5xl font-bold text-[#eb3301]">
+                    <div className="text-5xl font-bold text-[#54E2EB]">
                         <CountUp end={725} duration={2} suffix="+" />
                     </div>
                     <div className="text-xl font-semibold">PIONEER THROUGHS</div>
                 </div>
 
                 <div className="w-[210px] text-center">
-                    <div className="text-5xl font-bold text-[#eb3301]">
+                    <div className="text-5xl font-bold text-[#54E2EB]">
                         <CountUp end={129} duration={2} suffix="+" />
                     </div>
                     <div className="text-xl font-semibold">CLIENT EXPECTATIONS</div>
                 </div>
 
                 <div className="w-[210px] text-center">
-                    <div className="text-5xl font-bold text-[#eb3301]">
+                    <div className="text-5xl font-bold text-[#54E2EB]">
                         <CountUp end={66000} duration={2} separator="," />
                     </div>
                     <div className="text-xl font-semibold">DELIVERED PROMISES</div>
                 </div>
 
                 <div className="w-[210px] text-center">
-                    <div className="text-5xl font-bold text-[#eb3301]">
+                    <div className="text-5xl font-bold text-[#54E2EB]">
                         <CountUp end={63000} duration={2} separator="," />
                     </div>
                     <div className="text-xl font-semibold">COMPANY AWARDS</div>

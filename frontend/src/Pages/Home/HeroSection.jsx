@@ -14,6 +14,7 @@ export default function HeroSection() {
             buttonText: "GET AN APPOINTMENT",
             backgroundImage: Hero1,
         },
+
         {
             title: "EXPERT CAR REPAIRS",
             subtitle: "Quality Service You Can Trust",
@@ -43,7 +44,7 @@ export default function HeroSection() {
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",
-                                minHeight: "75vh",
+                                minHeight: "76vh",
                             }}
                         >
                             <div className="absolute inset-0 bg-black opacity-50"></div>

@@ -30,7 +30,7 @@ function ChangePassword() {
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#c42703]"
+                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#006AFF]"
                             placeholder="Enter your new password"
                         />
                     </div>
@@ -42,7 +42,7 @@ function ChangePassword() {
                             id="confirmPassword"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#c42703]"
+                            className="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-[#006AFF]"
                             placeholder="Confirm your new password"
                         />
                     </div>
@@ -50,7 +50,7 @@ function ChangePassword() {
                     <div className="flex items-center justify-center">
                         <button
                             type="submit"
-                            className="bg-[#c42703] text-white font-semibold py-2 px-4 rounded-md shadow-lg w-full hover:bg-[#a11e01] transition duration-300"
+                            className="bg-[#006AFF] text-white font-semibold py-2 px-4 rounded-md shadow-lg w-full hover:bg-[#004a99] transition duration-300"
                         >
                             Change Password
                         </button>
