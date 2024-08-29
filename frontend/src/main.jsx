@@ -17,6 +17,7 @@ import Register from './Pages/Register/Register.jsx';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword.jsx';
 import ChangePassword from './Pages/ChangePassword/ChangePassword.jsx';
 import StoreNavbar from './Pages/../components/NavBar/StoreNavbar.jsx';
+import Appointment from './Pages/CustomerSide/AppointmentManage/Appointment_1.jsx';
 
 const router = createBrowserRouter([
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/StoreNavbar",
     element: <StoreNavbar />,
+  },
+  {
+    path: "/appointment",
+    element: <Appointment />,
   },
 
 
