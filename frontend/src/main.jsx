@@ -16,7 +16,10 @@ import Login from './Pages/Login/Login.jsx';
 import Register from './Pages/Register/Register.jsx';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword.jsx';
 import ChangePassword from './Pages/ChangePassword/ChangePassword.jsx';
-import StoreNavbar from './Pages/../components/NavBar/StoreNavbar.jsx';
+import StoreNavbar from './Pages/../components/NavBar/StoreNavbar.jsx'; 
+import RecoveryDashboard from './Pages/AdminDashboard/RecoveryAdmin/RecoveryDashboard.jsx';
+import RecoveryPending from './Pages/AdminDashboard/RecoveryAdmin/RecoveryPending.jsx';
+
 
 const router = createBrowserRouter([
 
@@ -78,7 +81,14 @@ const router = createBrowserRouter([
     path: "/packages/update",
     element: <Update_Package />,
   },
-
+  {
+    path: "/Dashboard/recoveryDash",
+    element: <RecoveryDashboard />,
+  },
+  {
+    path: "/Dashboard/recoveryPendingDash",
+    element: <RecoveryPending />,
+  }
 
 
 
