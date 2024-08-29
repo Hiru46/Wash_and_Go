@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import HomeNavbar from '../../../components/NavBar/HomeNavbar';
 import Footer from '../../../components/Footer/Footer';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import pkg1 from '../../../assets/Packages/pkg1.jpeg';
 import pkg1_1 from '../../../assets/Packages/Pkg1/pkg1_1.jpeg';
 import pkg1_2 from '../../../assets/Packages/Pkg1/pkg1_2.jpeg';
