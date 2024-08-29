@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 function HomeNavbar() {
     return (
-        <div className=" h-fit mb-14">
+        <div className=" h-fit">
             {/* Header Section */}
-            <div className="z-40 absolute w-[280px] h-[132px] bg-[#006AFF] angled-rectangle1">
+            <div className="z-40 absolute w-[150px] h-[55px] bg-[#006AFF] angled-rectangle1">
                 <h1 className="text-white font-bold text-6xl absolute top-[48px] left-[38px]">
                     LOGO
                 </h1>
@@ -21,13 +21,13 @@ function HomeNavbar() {
 
 
 
-            <div className="absolute w-[330px] h-[132px] bg-[#386097] angled-rectangle2 z-20"></div>
+            <div className="absolute w-[178px] h-[132px] bg-[#386097] angled-rectangle2 z-20"></div>
 
             <div className="absolute left-[280px] h-[55px] bg-white angled-rectangle3 right-0 flex justify-between items-center ">
 
 
                 <div className="font-bold  text-xl  ml-5  ">
-                    Welcome to LOGO Car Repair Company
+                    Welcome to Wash & Go
                 </div>
 
                 <div className="flex items-center gap-3 mr-5" >

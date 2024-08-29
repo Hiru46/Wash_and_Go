@@ -16,7 +16,9 @@ import Login from './Pages/Login/Login.jsx';
 import Register from './Pages/Register/Register.jsx';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword.jsx';
 import ChangePassword from './Pages/ChangePassword/ChangePassword.jsx';
-import StoreNavbar from './Pages/../components/NavBar/StoreNavbar.jsx';
+import StoreNavbar from './components/NavBar/StoreNavbar.jsx';
+import Packages from './Pages/CustomerSide/ServicePackages/Packages.jsx'
+import PackageDetails from './Pages/CustomerSide/ServicePackages/PackageDetails.jsx'
 
 const router = createBrowserRouter([
 
@@ -50,7 +52,14 @@ const router = createBrowserRouter([
     path: "/StoreNavbar",
     element: <StoreNavbar />,
   },
-
+  {
+    path: "/packages",
+    element: <Packages />,
+  },
+  {
+    path: "/packages/:id",
+    element: <PackageDetails />,
+  },
 
 
 
