@@ -6,31 +6,22 @@ import AboutSection_Img1 from "../../assets/Home/Img4.jpg";
 import AboutSection_Img2 from "../../assets/Home/Img1.jpg";
 import AboutSection_Img3 from "../../assets/Home/service1.jpg";
 import AboutSection_Img4 from "../../assets/Home/24Offer.png";
+import About5 from "../../assets/Home/About5.jpg"
+import About6 from "../../assets/Home/About6.jpg"
+import About8 from "../../assets/Home/About8.jpg"
+import About7 from "../../assets/Home/About7.jpg"
+
 
 function AboutSection() {
     return (
         <div className="h-[97vh] w-full">
-            <div className="h-[80vh] w-[85%] flex mx-auto mt-[3vh]">
+            <div className="h-[80vh] w-[91%] flex mx-auto mt-[3vh]">
                 <div className="h-[80vh] w-1/2 flex justify-center items-center">
                     <div
-                        style={{ backgroundImage: `url(${AboutSection_Img1})` }}
-                        className="bg-cover bg-center w-[65vh] h-[65vh]"
+                        style={{ backgroundImage: `url(${About6})` }}
+                        className="bg-cover bg-center w-full h-full "
                     >
-                        <img
-                            src={AboutSection_Img3}
-                            alt="Description of image"
-                            className="w-[55%] h-[45%] relative left-[-30%] top-[-14%]"
-                        />
-                        <img
-                            src={AboutSection_Img2}
-                            alt="Description of image"
-                            className="w-[40%] h-[30%] ml-[-30%] mt-[38%]"
-                        />
-                        <img
-                            src={AboutSection_Img4}
-                            alt="Description of image"
-                            className="w-[60%] h-[50%] ml-[80%] mt-[-85%]"
-                        />
+
                     </div>
                 </div>
 

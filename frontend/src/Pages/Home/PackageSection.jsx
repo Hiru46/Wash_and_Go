@@ -1,5 +1,8 @@
 import React from "react";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
+import About5 from "../../assets/Home/About5.jpg"
+import About7 from "../../assets/Home/About7.jpg"
+import About4 from "../../assets/Home/About4.jpg"
 
 function PackageSection() {
     return (
@@ -143,15 +146,10 @@ function PackageSection() {
                 <div className=" w-[48%] h-auto   ">
                     <div
                         className="relative w-full h-[58%] bg-cover rounded-lg shadow-lg mt-4"
-                        style={{
-                            backgroundImage:
-                                "url('https://images.unsplash.com/photo-1490902931801-d6f80ca94fe4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-                        }}
+                        style={{ backgroundImage: `url(${About7})` }}
                     >
-                        <div className="absolute inset-0 flex items-center justify-center bg-black rounded-lg bg-opacity-30">
-                            <span className="text-5xl font-bold text-white relative top-[-12%]">
-                                Premium Car Services
-                            </span>
+                        <div className="absolute inset-0 flex items-center justify-center bg-black rounded-,d bg-opacity-30">
+
                         </div>
                     </div>
                     <div className="w-full p-6 mt-5 bg-gradient-to-r from-white via-gray-100 to-white shadow-2xl rounded-lg h-[35%]">

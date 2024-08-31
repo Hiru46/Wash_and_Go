@@ -9,10 +9,10 @@ import {
 
 const Footer = () => {
     return (
-        <div className='w-full mx-auto py-8 px-4 md:py-16 md:px-8 bg-black text-gray-300'>
+        <div className='w-full mx-auto py-8 px-4 md:py-16 md:px-8 bg-[#161920] text-gray-300'>
             <div className='grid gap-8 md:grid-cols-3'>
                 <div>
-                    <h1 className='text-4xl  font-bold text-[#c42703]'>Wash And Go.</h1>
+                    <img src="Logo3.png" alt="" className='h-[100px] w-1/2  ' />
                     <p className='py-4 text-sm md:text-base'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
                     <div className='flex flex-wrap justify-start md:justify-between space-x-4 md:space-x-6 my-6'>
                         <FaFacebookSquare size={30} />
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div className='ml-[10%]  grid grid-cols-2 gap-8 md:grid-cols-4 md:col-span-2'>
                     <div>
-                        <h6 className='font-medium text-[#c42703] mb-2 text-2xl'>Solutions</h6>
+                        <h6 className='font-medium text-[#006AFF] mb-2 text-2xl'>Solutions</h6>
                         <ul className='space-y-4'>
                             <li className='text-sm'>Analytics</li>
                             <li className='text-sm'>Marketing</li>
@@ -33,7 +33,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h6 className='font-medium text-[#c42703] mb-2 text-2xl'>Support</h6>
+                        <h6 className='font-medium text-[#006AFF] mb-2 text-2xl'>Support</h6>
                         <ul className='space-y-4'>
                             <li className='text-sm'>Pricing</li>
                             <li className='text-sm'>Documentation</li>
@@ -42,7 +42,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h6 className='font-medium text-[#c42703] mb-2 text-2xl'>Company</h6>
+                        <h6 className='font-medium text-[#006AFF] mb-2 text-2xl'>Company</h6>
                         <ul className='space-y-4'>
                             <li className='text-sm'>About</li>
                             <li className='text-sm'>Blog</li>
@@ -52,7 +52,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h6 className='font-medium text-[#c42703] mb-2 text-2xl'>Legal</h6>
+                        <h6 className='font-medium text-[#006AFF] mb-2 text-2xl'>Legal</h6>
                         <ul className='space-y-4'>
                             <li className='text-sm'>Claim</li>
                             <li className='text-sm'>Policy</li>
