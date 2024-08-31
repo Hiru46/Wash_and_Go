@@ -45,9 +45,9 @@ export default function UpdatePackage() {
             >
               Back
             </button>
-            <div className='h-full bg-white p-5 w-1/2 overflow-y-auto mx-auto rounded-xl'>
+            <div className='h-full bg-white p-16 w-10/12 overflow-y-auto mx-auto rounded-xl'>
                 {/* Form Section */}
-            <div className="w-full bg-white p-6 rounded-lg shadow-md mb-6 mx-auto">
+            <div className="w-full bg-white p-6 rounded-lg shadow-md mx-auto">
               <h1 className='text-center font-bold text-2xl bg-gray-700 text-white rounded-lg p-2 mb-5'>UPDATE PACKAGE</h1>
               <form action="">
                 <div className="mb-4">
@@ -116,7 +116,7 @@ export default function UpdatePackage() {
               </form>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {[1, 2, 3, 4].map((index) => (
-                  <div key={index} className="relative w-auto h-32 bg-gray-300 rounded-lg shadow-md flex items-center justify-center  hover:shadow-xl hover:duration-300">
+                  <div key={index} className="relative w-auto h-52 bg-gray-300 rounded-lg shadow-md flex items-center justify-center  hover:shadow-xl hover:duration-300">
                     <div className="absolute bottom-0 right-0 m-3">
                       <button className="px-2 py-2 bg-black text-white font-semibold rounded-md text-xs shadow-md hover:bg-gray-700 hover:shadow-gray-700 hover:duration-300">
                         Change Image

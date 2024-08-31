@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import HomeNavbar from '../../../components/NavBar/HomeNavbar';
+import HomeNavbar from '../../../components/NavBar/HomeNavbar_LoggedIn';
 import Footer from '../../../components/Footer/Footer';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import pkg1 from '../../../assets/Packages/pkg1.jpeg';
 import pkg1_1 from '../../../assets/Packages/Pkg1/pkg1_1.jpeg';
 import pkg1_2 from '../../../assets/Packages/Pkg1/pkg1_2.jpeg';
@@ -17,18 +15,16 @@ import pkg6 from '../../../assets/Packages/pkg6.jpeg';
 const packages = [
     {
         id: 1,
-        image1: pkg1,
-        image2: pkg1_2,
-        image3: pkg1_3,
+        images: [pkg1, pkg1_1, pkg1_2, pkg1_3],
         title: 'Basic Service Package',
-        description: 'A comprehensive package for basic vehicle maintenance.',
+        description: 'A comprehensive package for basic vehicle maintenance, designed to keep your car in top condition.',
         services: ['Oil Change', 'Tire Rotation', 'Brake Inspection'],
         estimatedTime: '2 Hours',
-        price: 'RS 16000'
+        price: 'RS 16000',
     },
     {
         id: 2,
-        image1: pkg2,
+        images: [pkg2, pkg1_1, pkg1_2, pkg1_3],
         title: 'Premium Service Package',
         description: 'Enhanced package with additional services for your vehicle.',
         services: ['Oil Change', 'Tire Rotation', 'Brake Inspection', 'Battery Check'],
@@ -37,7 +33,7 @@ const packages = [
     },
     {
         id: 3,
-        image1: pkg3,
+        images: [pkg3, pkg1_1, pkg1_2, pkg1_3],
         title: 'Ultimate Service Package',
         description: 'The ultimate package for complete vehicle care.',
         services: ['Oil Change', 'Tire Rotation', 'Brake Inspection', 'Battery Check', 'Engine Tune-Up'],
@@ -46,7 +42,7 @@ const packages = [
     },
     {
         id: 4,
-        image1: pkg4,
+        images: [pkg4, pkg1_1, pkg1_2, pkg1_3],
         title: 'Express Service Package',
         description: 'Quick and efficient service for busy schedules.',
         services: ['Oil Change', 'Tire Rotation'],
@@ -55,7 +51,7 @@ const packages = [
     },
     {
         id: 5,
-        image1: pkg5,
+        images: [pkg5, pkg1_1, pkg1_2, pkg1_3],
         title: 'Winter Service Package',
         description: 'Prepare your vehicle for winter conditions.',
         services: ['Oil Change', 'Tire Rotation', 'Brake Inspection', 'Antifreeze Check'],
@@ -64,7 +60,7 @@ const packages = [
     },
     {
         id: 6,
-        image1: pkg6,
+        images: [pkg6, pkg1_1, pkg1_2, pkg1_3],
         title: 'Summer Service Package',
         description: 'Get your vehicle ready for summer travels.',
         services: ['Oil Change', 'Tire Rotation', 'Brake Inspection', 'Air Conditioning Check'],
@@ -77,93 +73,62 @@ function PackageDetails() {
     const { id } = useParams();
     const pkg = packages.find(p => p.id === parseInt(id));
 
-    const [open, setOpen] = useState(false);
-    const [currentImage, setCurrentImage] = useState(0);
-
     if (!pkg) {
         return <div>Package not found</div>;
     }
 
-    const images = [
-        { src: pkg.image1 },
-        { src: pkg.image2 },
-        { src: pkg.image3 },
-    ];
-
-    const handleImageClick = (index) => {
-        setCurrentImage(index);
-        setOpen(true);
-    };
-
     return (
-        <div className="bg-gray-50">
+        <div className="bg-gray-100">
             <HomeNavbar />
-            <div className="container mx-auto p-6">
-                <h1 className="text-5xl font-extrabold text-center my-8 text-blue-800">{pkg.title}</h1>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <img
-                        src={pkg.image1}
-                        alt={pkg.title}
-                        className="w-full h-auto object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        onClick={() => handleImageClick(0)}
-                    />
-                    <div className="flex flex-col justify-center">
-                        <p className="text-lg text-gray-700 mb-4">{pkg.description}</p>
-                        <ul className="list-disc list-inside space-y-3 mb-6">
-                            {pkg.services.map((service, idx) => (
-                                <li key={idx} className="bg-gray-100 p-2 rounded">{service}</li>
-                            ))}
-                        </ul>
-                        <p className="text-lg text-gray-700 mb-2"><strong>Estimated Time:</strong> {pkg.estimatedTime}</p>
-                        <p className="text-lg text-gray-700 mb-6"><strong>Full Price:</strong> {pkg.price}</p>
-                        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300">
+            <div className="container mx-auto py-16 px-4">
+                {/* Hero Section */}
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+                    <div className="relative">
+                        <img src={pkg.images[0]} alt={pkg.title} className="w-full h-96 object-cover" />
+                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h1 className="text-5xl font-bold text-blue-50">{pkg.title}</h1>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Service Details */}
+                <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+                    <h2 className="text-3xl font-semibold mb-4">Service Details</h2>
+                    <p className="text-gray-700 mb-8">{pkg.description}</p>
+                    <h3 className="text-xl font-semibold mb-2">What's Included:</h3>
+                    <ul className="list-disc list-inside mb-8">
+                        {pkg.services.map((service, idx) => (
+                            <li key={idx} className="text-gray-700 mb-2">{service}</li>
+                        ))}
+                    </ul>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                            <h4 className="font-semibold">Estimated Time:</h4>
+                            <p>{pkg.estimatedTime}</p>
+                        </div>
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                            <h4 className="font-semibold">Price:</h4>
+                            <p>{pkg.price}</p>
+                        </div>
+                    </div>
+                    <div className="text-center mt-8">
+                        <button className="bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">
                             Make an Appointment
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
-                    <div className="order-last lg:order-first flex flex-col justify-center">
-                        <p className="text-lg text-gray-700 mb-4">{pkg.description}</p>
-                        <ul className="list-disc list-inside space-y-3 mb-6">
-                            {pkg.services.map((service, idx) => (
-                                <li key={idx} className="bg-gray-100 p-2 rounded">{service}</li>
-                            ))}
-                        </ul>
-                        <p className="text-lg text-gray-700 mb-2"><strong>Estimated Time:</strong> {pkg.estimatedTime}</p>
-                        <p className="text-lg text-gray-700 mb-6"><strong>Full Price:</strong> {pkg.price}</p>
-                        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300">
-                            Make an Appointment
-                        </button>
+                {/* Images */}
+                <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {pkg.images.slice(1).map((image, idx) => (
+                            <img key={idx} src={image} alt={`Service Image ${idx + 1}`} className="w-full h-64 object-cover rounded-lg shadow-lg" />
+                        ))}
                     </div>
-                    <img
-                        src={pkg.image2}
-                        alt={pkg.title}
-                        className="w-full h-auto object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        onClick={() => handleImageClick(1)}
-                    />
                 </div>
 
-                <div className="mt-10">
-                    <img
-                        src={pkg.image3}
-                        alt={pkg.title}
-                        className="w-full h-auto object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        onClick={() => handleImageClick(2)}
-                    />
-                </div>
             </div>
             <Footer />
-
-            {/* Lightbox Component */}
-            {open && (
-                <Lightbox
-                    open={open}
-                    close={() => setOpen(false)}
-                    slides={images}
-                    index={currentImage}
-                />
-            )}
         </div>
     );
 }

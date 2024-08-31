@@ -48,7 +48,7 @@ export default function PackagesDashboard() {
             <div>
               <button className="w-1/2 px-4 py-2 bg-gray-700 text-white font-semibold shadow-md">Package Details</button>
               <button className="w-1/2 px-4 py-2 bg-gray-500 text-white font-semibold shadow-md hover:bg-gray-600 hover:duration-300">
-                <SideNavLinks linkName="Add Package" url="addpckg" />
+                <SideNavLinks linkName="Add Package" url="/packages/addpckg" />
               </button>
             </div>
             <div className='mt-5 h-[470px] overflow-y-scroll bg-gray-100 border-2 border-solid border-gray-300'>

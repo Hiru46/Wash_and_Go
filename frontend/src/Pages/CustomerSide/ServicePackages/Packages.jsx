@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HomeNavbar from '../../../components/NavBar/HomeNavbar';
+import HomeNavbar from '../../../components/NavBar/HomeNavbar_LoggedIn';
 import Footer from '../../../components/Footer/Footer';
 import pkg1 from '../../../assets/Packages/pkg1.jpeg';
 import pkg2 from '../../../assets/Packages/pkg2.jpeg';
@@ -72,7 +72,7 @@ function Packages() {
             <HomeNavbar />
 
             <div>
-                <h1 className='w-full text-center mt-28 font-bold text-4xl'>Service Packages</h1>
+                <h1 className='w-full text-center mt-10 font-bold text-4xl'>Service Packages</h1>
             </div>
             <div className='mx-20'>
                 <h1 className='w-full text-justify mt-10 text-lg'>
@@ -84,7 +84,7 @@ function Packages() {
                 </h1>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-16 p-16 h-fit my-12 bg-blue-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-16 p-16 h-fit my-12 rounded-2xl bg-blue-100">
                 {packages.map((pkg) => (
                     <Link to={`/packages/${pkg.id}`} key={pkg.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
                         <img src={pkg.image} alt={pkg.title} className="w-full h-48 object-cover" />

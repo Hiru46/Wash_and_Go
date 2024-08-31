@@ -72,7 +72,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/packages",
+    path: "/dash_packages",
     element: <Packages_Dashboard />,
   },
   {

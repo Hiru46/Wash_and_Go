@@ -19,7 +19,7 @@ export default function SideNavBar() {
             <SideNavLinks linkName="CUSTOMER DETAILS" url="/cus_details"/>
           </li>
           <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
-            <SideNavLinks linkName="PACKAGES" url="/packages"/>
+            <SideNavLinks linkName="PACKAGES" url="/dash_packages"/>
           </li>
           <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
             <SideNavLinks linkName="INVENTORY" url="/inventory"/>
