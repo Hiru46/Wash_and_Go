@@ -21,6 +21,8 @@ import Packages from './Pages/CustomerSide/ServicePackages/Packages.jsx'
 import PackageDetails from './Pages/CustomerSide/ServicePackages/PackageDetails.jsx'
 import UpdateCustomers from "./Pages/AdminDashboard/ManageCustomers/UpdateCustomers.jsx"
 import AddCustomers from "./Pages/AdminDashboard/ManageCustomers/AddCustomers.jsx"
+import Offers from './Pages/Offers/Offers.jsx';
+import OffersDashboard from './Pages/AdminDashboard/OffersDashboard/OffersDashboard.jsx';
 
 
 
@@ -67,6 +69,11 @@ const router = createBrowserRouter([
     element: <PackageDetails />,
   },
 
+  {
+    path: "/Offers",
+    element: <Offers />,
+  },
+
 
 
   // ======================== Admin Side=====================
@@ -97,15 +104,13 @@ const router = createBrowserRouter([
     path: "/cus_Add",
     element: <AddCustomers />,
   },
-
-
-
-
-
-
   {
     path: "/packages/update",
     element: <Update_Package />,
+  },
+  {
+    path: "/offers_dash",
+    element: <OffersDashboard/>,
   },
 
 
