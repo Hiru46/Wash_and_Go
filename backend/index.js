@@ -1,12 +1,24 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
 const app = express();
+
+// Import routes
+const AdminCustomersManage = require("./routes/UserRouter");
 
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use("/AdminCustomers", AdminCustomersManage);
+
+
+
+
+
+
+
+
+
 
 // MongoDB connection
 mongoose

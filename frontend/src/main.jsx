@@ -19,6 +19,12 @@ import ChangePassword from './Pages/ChangePassword/ChangePassword.jsx';
 import StoreNavbar from './components/NavBar/StoreNavbar.jsx';
 import Packages from './Pages/CustomerSide/ServicePackages/Packages.jsx'
 import PackageDetails from './Pages/CustomerSide/ServicePackages/PackageDetails.jsx'
+import UpdateCustomers from "./Pages/AdminDashboard/ManageCustomers/UpdateCustomers.jsx"
+import AddCustomers from "./Pages/AdminDashboard/ManageCustomers/AddCustomers.jsx"
+
+
+
+
 
 const router = createBrowserRouter([
 
@@ -83,6 +89,20 @@ const router = createBrowserRouter([
     path: "/cus_details",
     element: <Cus_Details />,
   },
+  {
+    path: "/cus_details_update/:id",
+    element: <UpdateCustomers />,
+  },
+  {
+    path: "/cus_Add",
+    element: <AddCustomers />,
+  },
+
+
+
+
+
+
   {
     path: "/packages/update",
     element: <Update_Package />,

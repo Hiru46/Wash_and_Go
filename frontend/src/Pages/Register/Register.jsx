@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Register6 from "../../assets/Register/Register6.png"; // Assuming this is the correct path for your image
+import Register6 from "../../assets/Register/Register6.png";
 
 function Register() {
     const navigate = useNavigate();
