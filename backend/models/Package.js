@@ -2,22 +2,38 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const packageSchema = new Schema({
-    id: {
-        type: Number,
-        maxLength: 5,
+    package_ID: { 
+        type: String, 
+        required: true 
     },
-    name: {
-        type: String,
-        maxLength: 30,
+    name: { 
+        type: String, 
+        required: true 
     },
-    estimated_time: {
-        type: Number,
-        maxLength: 2,
+    description1: { 
+        type: String, 
+        required: true 
     },
-    price: {
-        type: Number,
-        maxLength: 10,
+    description2: { 
+        type: String, 
+        required: true 
     },
+    services: [{ 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Service' 
+    }],
+    estimated_time: { 
+        type: Number, 
+        required: true 
+    },
+    price: { 
+        type: Number, 
+        required: true 
+    },
+    status: { 
+        type: String, 
+        required: true 
+    }
 });
 
 const packageModel = mongoose.model('Package', packageSchema);

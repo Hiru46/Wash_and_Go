@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SideNavBar from '../../../components/Dashboards/SideNavBar';
 import Header from '../../../components/Dashboards/Header';
 import ConfirmationPopup from "../../../components/Confirmations/PKGDeleteConfirm";
 import SideNavLinks from "../../../components/Dashboards/SideNavLinks/SideNavLinks";
+import { useNavigate } from 'react-router-dom';
 
 export default function PackagesDashboard() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("");
+  const [packages, setPackages] = useState([]);
 
-  const packages = [
-    { id: 1, name: "Basic Service" },
-    { id: 2, name: "Full Service" },
-    { id: 3, name: "Premium Service" },
-    { id: 4, name: "Deluxe Service" },
-    { id: 5, name: "Platinum Service" },
-    // Add more packages as needed
-  ];
+  useEffect(() => {
+    fetch('http://localhost:5000/package')
+      .then(response => response.json())
+      .then(data => setPackages(data))
+      .catch(error => console.error('Error fetching packages:', error));
+  }, []);  
 
   const handleDeleteClick = (packageName) => {
     setSelectedPackage(packageName);
     setIsPopupOpen(true);
+  };
+
+  const navigate = useNavigate();
+
+  const handleUpdateClick = (packageId) => {
+    navigate(`/packages/update/${packageId}`);
   };
 
   const handleConfirmDelete = () => {
@@ -65,22 +71,25 @@ export default function PackagesDashboard() {
                 </thead>
                 <tbody>
                   {packages.map((pkg, index) => (
-                    <tr key={pkg.id} className={`border-t border-gray-300 ${index % 2 === 1 ? 'bg-gray-100' : ''}`}>
-                      <td className="px-2 py-4 text-center text-black">ID {pkg.id}</td>
+                    <tr key={pkg._id} className={`border-t border-gray-300 ${index % 2 === 1 ? 'bg-gray-100' : ''}`}>
+                      <td className="px-2 py-4 text-center text-black">{pkg.package_ID}</td>
                       <td className="px-2 py-4 text-center text-black">{pkg.name}</td>
-                      <td className="px-2 py-4 text-center text-black">2 hrs</td>
-                      <td className="px-2 py-4 text-center text-black">$100</td>
-                      <td className="px-2 py-4 text-center text-black">Active</td>
+                      <td className="px-2 py-4 text-center text-black">{pkg.estimated_time} hrs</td>
+                      <td className="px-2 py-4 text-center text-black">${pkg.price}</td>
+                      <td className="px-2 py-4 text-center text-black">{pkg.status}</td>
                       <td className="text-center py-4 text-sm">
-                        <button className="px-3 py-2 mr-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-700 hover:shadow-gray-700 hover:duration-300">
-                          <SideNavLinks linkName="Update" url={`/packages/update`} />
-                        </button>
-                        <button
-                          className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-md hover:bg-red-700 hover:shadow-gray-700 hover:duration-300"
-                          onClick={() => handleDeleteClick(pkg.name)}
-                        >
-                          Delete
-                        </button>
+                      <button
+                        onClick={() => handleUpdateClick(pkg._id)}
+                        className="px-3 py-2 mr-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-700 hover:shadow-gray-700 hover:duration-300"
+                      >
+                        Update
+                      </button>
+                      <button
+                        className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-md hover:bg-red-700 hover:shadow-gray-700 hover:duration-300"
+                        onClick={() => handleDeleteClick(pkg.name)}
+                      >
+                        Delete
+                      </button>
                       </td>
                     </tr>
                   ))}

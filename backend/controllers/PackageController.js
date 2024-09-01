@@ -1,3 +1,4 @@
+const packageModel = require("../models/Package");
 const serviceModel = require("../models/Service");
 
 class PackageController {
@@ -6,7 +7,7 @@ class PackageController {
             try {
                 if (id === null) {
                     // If no id is provided, find all documents
-                    serviceModel.find()
+                    packageModel.find().populate({path: 'services', select: 'name -_id' })
                         .then((result) => {
                             if (result.length > 0) {
                                 resolve(result); // Return all documents
@@ -19,7 +20,7 @@ class PackageController {
                         });
                 } else {
                     // If an id is provided, find the document by id
-                    serviceModel.findById(id)
+                    packageModel.findById(id).populate({path: 'services', select: 'name -_id' })
                         .then((result) => {
                             if (result) {
                                 resolve(result); // Return the found document
@@ -39,7 +40,7 @@ class PackageController {
 
     async store(data) {
         try {
-            const Package = new serviceModel({
+            const Package = new packageModel({
                 ...data
             });
 

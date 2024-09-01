@@ -11,6 +11,15 @@ PackageRouter.get("/:id?", async (req, res) => {
     }
 });
 
+PackageRouter.put('/:id', async (req, res) => {
+    try {
+      const updatedPackage = await Package.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      res.status(200).json(updatedPackage);
+    } catch (error) {
+      res.status(400).json({ message: 'Error updating package', error });
+    }
+  });
+
 PackageRouter.post("/store", async (req, res) => {
     try {
         const data = await new PackageController().store(req.body);

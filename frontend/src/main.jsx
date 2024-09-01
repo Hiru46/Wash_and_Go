@@ -87,12 +87,10 @@ const router = createBrowserRouter([
     path: "/packages/update",
     element: <Update_Package />,
   },
-
-
-
-
-
-
+  {
+    path: "/packages/update/:id",
+    element: <Update_Package />,
+  },
 
 ]);
 
