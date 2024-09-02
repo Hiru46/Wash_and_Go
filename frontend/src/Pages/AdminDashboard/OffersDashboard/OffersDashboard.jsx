@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from '../../../components/Dashboards/Header';
 import SideNavBar from '../../../components/Dashboards/SideNavBar';
 
 function OffersDashboard() {
+  const [offers, setOffers] = useState([]);
+
+
+  // Fetch Offers
+  useEffect(() => {
+    const fetchOffers = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/offers');
+        setOffers(response.data.offers); // Update state with the fetched offers
+      } catch (error) {
+        console.error('Error fetching offers:', error);
+      }
+    };
+
+    fetchOffers();
+  }, []);
+
+
+  //Delete Offers
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:5000/offers/${id}`);
+      if (response.status === 200) {
+        alert('Offer deleted successfully!');
+        fetchOffers(); // Refresh the list after deletion
+      } else {
+        alert('Failed to delete offer');
+      }
+    } catch (error) {
+      console.error('Error deleting offer:', error);
+      alert('Error deleting offer');
+    }
+  };
+
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
@@ -56,47 +92,43 @@ function OffersDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  {
-                    title: 'Maintenance',
-                    status: 'Published',
-                    about: 'Importance of Regular Vehicle Maintenance',
-                    expDate: '2024/10/1',
-                    startDate: '2024/03/31',
-                  },
-                  {
-                    title: 'Wheel Alignment',
-                    status: 'Not Published',
-                    about: 'Signs Your Car Needs a Wheel Alignment',
-                    expDate: '2024/10/1',
-                    startDate: '2024/03/31',
-                  },
-                  {
-                    title: 'Professional Services',
-                    status: 'Published',
-                    about: 'DIY Car Care vs. Professional Services',
-                    expDate: '2024/10/1',
-                    startDate: '2024/03/31',
-                  },
-                  // Add other offers similarly...
-                ].map((offer, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="px-2 py-4">{offer.title}</td>
-                    <td className="px-2 py-4">
-                      <span className={`px-3 py-1 rounded-full ${offer.status === 'Published' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}`}>
-                        {offer.status}
-                      </span>
-                    </td>
-                    <td className="px-2 py-4">{offer.about}</td>
-                    <td className="px-2 py-4">{offer.expDate}</td>
-                    <td className="px-2 py-4">{offer.startDate}</td>
-                    <td className="flex items-center px-2 py-4 space-x-2">
-                      <button className="text-blue-600 hover:underline">Edit</button>
-                      <button className="text-red-600 hover:underline">Delete</button>
+                {offers.length > 0 ? (
+                  offers.map((offer, index) => (
+                    <tr key={index} className="border-b">
+                      <td className="px-2 py-4">{offer.title}</td>
+                      <td className="px-2 py-4">
+                        <span
+                          className={`px-3 py-1 rounded-full ${
+                            (offer.status || 'Published') === 'Published'
+                              ? 'bg-green-100 text-green-700'
+                              : 'bg-gray-100 text-gray-700'
+                          }`}
+                        >
+                          {offer.status || 'Published'}
+                        </span>
+                      </td>
+                      <td className="px-2 py-4">{offer.description}</td>
+                      <td className="px-2 py-4">{new Date(offer.expirationDate).toLocaleDateString()}</td>
+                      <td className="px-2 py-4">{new Date(offer.startDate).toLocaleDateString()}</td>
+                      <td className="flex items-center px-2 py-4 space-x-2">
+                        <button className="text-blue-600 hover:underline">Edit</button>
+                        <button
+                          className="text-red-600 hover:underline"
+                          onClick={() => handleDelete(offer._id)}
+                        >
+                          Delete
+                        </button>             
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="6" className="px-2 py-4 text-center">
+                      No offers found.
                     </td>
                   </tr>
-                ))}
-              </tbody>
+                )}
+            </tbody>
             </table>
           </div>
         </div>

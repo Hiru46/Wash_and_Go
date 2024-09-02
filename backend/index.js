@@ -5,11 +5,13 @@ const app = express();
 
 // Import routes
 const AdminCustomersManage = require("./routes/UserRouter");
+const OfferRouter = require('./routes/OfferRouter');
 
 // Middleware
 app.use(express.json());
 app.use(cors());
 app.use("/AdminCustomers", AdminCustomersManage);
+app.use('/offers', OfferRouter);
 
 
 
