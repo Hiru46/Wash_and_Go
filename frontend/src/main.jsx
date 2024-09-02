@@ -23,6 +23,7 @@ import UpdateCustomers from "./Pages/AdminDashboard/ManageCustomers/UpdateCustom
 import AddCustomers from "./Pages/AdminDashboard/ManageCustomers/AddCustomers.jsx"
 import Offers from './Pages/Offers/Offers.jsx';
 import OffersDashboard from './Pages/AdminDashboard/OffersDashboard/OffersDashboard.jsx';
+import Add_Offer from './Pages/AdminDashboard/OffersDashboard/Add_Offer.jsx';
 
 
 
@@ -68,11 +69,15 @@ const router = createBrowserRouter([
     path: "/packages/:id",
     element: <PackageDetails />,
   },
-
   {
     path: "/Offers",
     element: <Offers />,
   },
+  {
+    path: "/add_offer",
+    element: <Add_Offer />,
+  },
+
 
 
 
