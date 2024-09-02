@@ -48,7 +48,7 @@ export default function HeroSection() {
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",
-                                minHeight: "76vh",
+                                minHeight: "82vh",
                             }}
                         >
                             <div className="absolute inset-0 bg-black opacity-50"></div>

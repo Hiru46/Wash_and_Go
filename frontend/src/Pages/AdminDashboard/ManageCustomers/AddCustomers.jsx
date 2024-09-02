@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function AddCustomers() {
     const [imagePreview, setImagePreview] = useState(null);
+    const [imageFile, setImageFile] = useState(null); // New state to store the selected image file
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const [input, setInput] = useState({
@@ -19,15 +20,23 @@ function AddCustomers() {
         Password: "",
     });
 
-    const handleImageUpload = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setImagePreview(reader.result);
-            };
-            reader.readAsDataURL(file);
+    const handleImageUpload = async () => {
+        if (imageFile) {
+            try {
+                const formData = new FormData();
+                formData.append('image', imageFile); // Ensure 'image' matches the name in your back-end upload route
+                const uploadRes = await axios.post('http://localhost:5000/uploadProfileImage', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+                return uploadRes.data.imageUrl; // Return the image URL
+            } catch (error) {
+                console.error("Error uploading image:", error);
+                return null;
+            }
         }
+        return null;
     };
 
     const handleChange = (e) => {
@@ -96,7 +105,10 @@ function AddCustomers() {
             return;
         }
 
-        // If all validations pass, proceed with form submission
+        // Upload the image and get the URL
+        const imageUrl = await handleImageUpload();
+
+        // Proceed with form submission
         await sendRequest();
         navigate("/cus_details");
     };
@@ -110,6 +122,7 @@ function AddCustomers() {
             NIC: String(input.NIC),
             Email: String(input.Email),
             Password: String(input.Password),
+            // Do not include ProfileImageUrl here
         });
     };
 
@@ -143,7 +156,17 @@ function AddCustomers() {
                                         id="file-upload"
                                         className="absolute inset-0 opacity-0 cursor-pointer"
                                         accept="image/*"
-                                        onChange={handleImageUpload}
+                                        onChange={(e) => {
+                                            const file = e.target.files[0];
+                                            if (file) {
+                                                setImageFile(file); // Store the selected image file
+                                                const reader = new FileReader();
+                                                reader.onloadend = () => {
+                                                    setImagePreview(reader.result);
+                                                };
+                                                reader.readAsDataURL(file);
+                                            }
+                                        }}
                                     />
                                     <label
                                         htmlFor="file-upload"
@@ -216,18 +239,6 @@ function AddCustomers() {
                                     {errors.NIC && <p className="text-red-500 text-sm">{errors.NIC}</p>}
                                 </div>
                                 <div>
-                                    <label className="block text-gray-700">Email Address</label>
-                                    <input
-                                        type="email"
-                                        name="Email"
-                                        value={input.Email}
-                                        onChange={handleChange}
-                                        className="w-full border p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="Enter email address"
-                                    />
-                                    {errors.Email && <p className="text-red-500 text-sm">{errors.Email}</p>}
-                                </div>
-                                <div>
                                     <label className="block text-gray-700">Mobile Number</label>
                                     <input
                                         type="text"
@@ -239,7 +250,19 @@ function AddCustomers() {
                                     />
                                     {errors.MobileNumber && <p className="text-red-500 text-sm">{errors.MobileNumber}</p>}
                                 </div>
-                                <div className="col-span-1 sm:col-span-2">
+                                <div>
+                                    <label className="block text-gray-700">Email</label>
+                                    <input
+                                        type="email"
+                                        name="Email"
+                                        value={input.Email}
+                                        onChange={handleChange}
+                                        className="w-full border p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="Enter email"
+                                    />
+                                    {errors.Email && <p className="text-red-500 text-sm">{errors.Email}</p>}
+                                </div>
+                                <div>
                                     <label className="block text-gray-700">Address</label>
                                     <input
                                         type="text"
@@ -251,7 +274,7 @@ function AddCustomers() {
                                     />
                                     {errors.Address && <p className="text-red-500 text-sm">{errors.Address}</p>}
                                 </div>
-                                <div className="col-span-1 sm:col-span-2">
+                                <div className="col-span-2">
                                     <label className="block text-gray-700">Password</label>
                                     <input
                                         type="password"
@@ -265,14 +288,12 @@ function AddCustomers() {
                                 </div>
                             </div>
 
-                            <div className="flex justify-center mb-4">
-                                <button
-                                    type="submit"
-                                    className="px-8 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300"
-                                >
-                                    Add Customer
-                                </button>
-                            </div>
+                            <button
+                                type="submit"
+                                className="w-full py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600 transition duration-300"
+                            >
+                                Save
+                            </button>
                         </form>
                     </div>
                 </main>
