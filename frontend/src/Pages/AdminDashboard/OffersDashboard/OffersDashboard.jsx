@@ -1,44 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Header from '../../../components/Dashboards/Header';
-import SideNavBar from '../../../components/Dashboards/SideNavBar';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
+import Header from "../../../components/Dashboards/Header";
+import SideNavBar from "../../../components/Dashboards/SideNavBar";
 
 function OffersDashboard() {
   const [offers, setOffers] = useState([]);
-
+  const navigate = useNavigate(); // Get navigate from useNavigate hook
 
   // Fetch Offers
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/offers');
+        const response = await axios.get("http://localhost:5000/offers");
         setOffers(response.data.offers); // Update state with the fetched offers
       } catch (error) {
-        console.error('Error fetching offers:', error);
+        console.error("Error fetching offers:", error);
       }
     };
 
     fetchOffers();
   }, []);
 
-
-  //Delete Offers
+  // Delete Offers
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(`http://localhost:5000/offers/${id}`);
       if (response.status === 200) {
-        alert('Offer deleted successfully!');
-        fetchOffers(); // Refresh the list after deletion
+        alert("Offer deleted successfully!");
+        // Update the offers state to remove the deleted offer
+        setOffers(offers.filter((offer) => offer._id !== id));
       } else {
-        alert('Failed to delete offer');
+        alert("Failed to delete offer");
       }
     } catch (error) {
-      console.error('Error deleting offer:', error);
-      alert('Error deleting offer');
+      console.error("Error deleting offer:", error);
+      alert("Error deleting offer");
     }
   };
-
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -50,7 +49,9 @@ function OffersDashboard() {
         <Header />
 
         <div className="flex items-center justify-between p-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">Welcome back, Ravindu</h1>
+          <h1 className="text-2xl font-bold text-gray-900">
+            Welcome back, Ravindu
+          </h1>
           <Link to="/add_offer">
             <button className="flex items-center px-4 py-2 font-medium text-white uppercase bg-purple-500 rounded-lg hover:bg-purple-600">
               <span className="mr-2">+</span> Add
@@ -99,25 +100,43 @@ function OffersDashboard() {
                       <td className="px-2 py-4">
                         <span
                           className={`px-3 py-1 rounded-full ${
-                            (offer.status || 'Published') === 'Published'
-                              ? 'bg-green-100 text-green-700'
-                              : 'bg-gray-100 text-gray-700'
+                            (offer.status || "Published") === "Published"
+                              ? "bg-green-100 text-green-700"
+                              : "bg-gray-100 text-gray-700"
                           }`}
                         >
-                          {offer.status || 'Published'}
+                          {offer.status || "Published"}
                         </span>
                       </td>
                       <td className="px-2 py-4">{offer.description}</td>
-                      <td className="px-2 py-4">{new Date(offer.expirationDate).toLocaleDateString()}</td>
-                      <td className="px-2 py-4">{new Date(offer.startDate).toLocaleDateString()}</td>
+                      <td className="px-2 py-4">
+                        {new Date(offer.expirationDate).toLocaleDateString()}
+                      </td>
+                      <td className="px-2 py-4">
+                        {new Date(offer.startDate).toLocaleDateString()}
+                      </td>
                       <td className="flex items-center px-2 py-4 space-x-2">
-                        <button className="text-blue-600 hover:underline">Edit</button>
+                        
+                        {/* Update Button */}
+                        <button
+                          className="text-blue-600 hover:underline"
+                          onClick={() => {
+                            console.log(`Navigating to /update_offer/${offer._id}`);
+                            navigate(`/update_offer/${offer._id}`, {
+                              state: { offer },
+                            });
+                          }}
+                        >
+                          Edit
+                        </button>
+
+                        {/* Delete Button */}
                         <button
                           className="text-red-600 hover:underline"
                           onClick={() => handleDelete(offer._id)}
                         >
                           Delete
-                        </button>             
+                        </button>
                       </td>
                     </tr>
                   ))
@@ -128,7 +147,7 @@ function OffersDashboard() {
                     </td>
                   </tr>
                 )}
-            </tbody>
+              </tbody>
             </table>
           </div>
         </div>

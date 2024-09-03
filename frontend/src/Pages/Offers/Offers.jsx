@@ -1,10 +1,10 @@
 import HomeNavbar from "../../components/NavBar/HomeNavbar";
 import Footer from "../../components/Footer/Footer"
-import offer1 from "../../assets/Offers/offer1.jpeg";
-import offer2 from "../../assets/Offers/offer2.jpeg";
-import offer3 from "../../assets/Offers/offer3.jpeg";
-import offer4 from "../../assets/Offers/offer4.jpeg";
-import offer5 from "../../assets/Offers/offer5.jpeg";
+import offer1 from "../../assets/Offers/offer1.jpg";
+import offer2 from "../../assets/Offers/offer2.jpg";
+import offer3 from "../../assets/Offers/offer3.jpg";
+// import offer4 from "../../assets/Offers/offer4.jpg";
+// import offer5 from "../../assets/Offers/offer5.jpg";
 
 
 
@@ -43,28 +43,32 @@ function Offers(){
                     ">
                     <div className="grid w-full grid-cols-2 gap-5">
                         <div className="w-full h-full">
-                            <img 
-                                src={offer1}
-                                alt="offer1" 
-                                className="object-cover w-full h-full"
-                            />
+                        <img 
+                            src={offer1}
+                            alt="Vehicle Service Offer" 
+                            className="object-cover w-full h-full"
+                        />
                         </div>
-                        <div className="w-full h-full">
-                            <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase">
-                                Get 50% OFF on Oil Change Services!
-                            </h3>
-
-                            <p className="mb-20 font-sans text-xl text-justify">
-                                Drive into savings with our limited-time offer! 
-                                Enjoy a 50% discount on your next oil change at Wash and Go Service Center. 
-                                Whether you're cruising in a luxury vehicle or an SUV, our expert technicians 
-                                will ensure your car runs smoothly. 
-                                Don't miss out on this incredible deal because when it comes to your car, 
-                                only the best will do. Be Fit Be Quick with Wash and Go Service Center!
-                            </p>
+                        <div className="flex flex-col justify-center w-full h-full">
+                        <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase topic">
+                            Premium Vehicle Service
+                        </h3>
+                        <h1 className="p-4 text-4xl font-bold text-center text-white bg-red-600 rounded-full shadow-lg discount-percentage">
+                            20% OFF
+                        </h1>
+                        <p className="mt-5 font-sans text-xl text-justify description">
+                            Get a comprehensive vehicle service with a 20% discount. Our expert technicians
+                            ensure that your vehicle is in top condition. This offer includes a complete
+                            engine check, oil change, and tire rotation. Hurry, the offer is valid for a limited time!
+                        </p>
+                        <p className="p-4 mt-8 font-sans text-lg font-bold text-center text-blue-600 uppercase rounded ">
+                            Valid from September 1, 2024 to <br/> September 30, 2024
+                        </p>
                         </div>
                     </div>
                 </div>
+               
+
 
                 {/*Box 2*/}
                 <div className="
@@ -73,28 +77,32 @@ function Offers(){
                     ">
                     <div className="grid w-full grid-cols-2 gap-5">
                         <div className="w-full h-full">
-                            <img 
-                                src={offer2}
-                                alt="offer1" 
-                                className="object-cover w-full h-full"
-                            />
+                        <img 
+                            src={offer2}
+                            alt="Vehicle Service Offer" 
+                            className="object-cover w-full h-full"
+                        />
                         </div>
-                        <div className="w-full h-full">
-                            <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase">
-                                Get 50% OFF on Oil Change Services!
-                            </h3>
-
-                            <p className="mb-20 font-sans text-xl text-center">
-                                Drive into savings with our limited-time offer! 
-                                Enjoy a 50% discount on your next oil change at Wash and Go Service Center. 
-                                Whether you're cruising in a luxury vehicle or an SUV, our expert technicians 
-                                will ensure your car runs smoothly. 
-                                Don't miss out on this incredible deal because when it comes to your car, 
-                                only the best will do. Be Fit Be Quick with Wash and Go Service Center!
-                            </p>
+                        <div className="flex flex-col justify-center w-full h-full">
+                        <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase topic">
+                            Wheel Alignment & Tire Balancing
+                        </h3>
+                        <h1 className="p-4 text-4xl font-bold text-center text-white bg-red-600 rounded-full shadow-lg discount-percentage">
+                            15% OFF
+                        </h1>
+                        <p className="mt-5 font-sans text-xl text-justify description">
+                            Ensure your vehicle’s wheels are perfectly aligned and balanced with a 15% discount on our premium service.
+                            Our skilled technicians use state-of-the-art equipment to guarantee smooth driving and prolong the life of your tires.
+                            Don't miss out on this exclusive offer!
+                        </p>
+                        <p className="p-4 mt-8 font-sans text-lg font-bold text-center text-blue-600 uppercase rounded">
+                            Valid from September 1, 2024 to <br/> September 30, 2024
+                        </p>
                         </div>
                     </div>
                 </div>
+
+
 
                 {/*Box 3*/}
                 <div className="
@@ -103,90 +111,42 @@ function Offers(){
                     ">
                     <div className="grid w-full grid-cols-2 gap-5">
                         <div className="w-full h-full">
-                            <img 
-                                src={offer3}
-                                alt="offer3" 
-                                className="object-cover w-full h-full"
-                            />
+                        <img 
+                            src={offer3}
+                            alt="Vehicle Service Offer" 
+                            className="object-cover w-full h-full"
+                        />
                         </div>
-                        <div className="w-full h-full">
-                            <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase">
-                                Get 50% OFF on Oil Change Services!
-                            </h3>
-
-                            <p className="mb-20 font-sans text-xl text-center">
-                                Drive into savings with our limited-time offer! 
-                                Enjoy a 50% discount on your next oil change at Wash and Go Service Center. 
-                                Whether you're cruising in a luxury vehicle or an SUV, our expert technicians 
-                                will ensure your car runs smoothly. 
-                                Don't miss out on this incredible deal because when it comes to your car, 
-                                only the best will do. Be Fit Be Quick with Wash and Go Service Center!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/*Box 4*/}
-                <div className="
-                    p-10 bg-slate-200 w-[1080px] ml-[150px] mb-[100px] rounded-lg shadow-2xl cursor-pointer	
-                    ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-500 duration-300
-                    ">
-                    <div className="grid w-full grid-cols-2 gap-5">
-                        <div className="w-full h-full">
-                            <img 
-                                src={offer4}
-                                alt="offer4" 
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase">
-                                Get 50% OFF on Oil Change Services!
-                            </h3>
-
-                            <p className="mb-20 font-sans text-xl text-center">
-                                Drive into savings with our limited-time offer! 
-                                Enjoy a 50% discount on your next oil change at Wash and Go Service Center. 
-                                Whether you're cruising in a luxury vehicle or an SUV, our expert technicians 
-                                will ensure your car runs smoothly. 
-                                Don't miss out on this incredible deal because when it comes to your car, 
-                                only the best will do. Be Fit Be Quick with Wash and Go Service Center!
-                            </p>
+                        <div className="flex flex-col justify-center w-full h-full">
+                        <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase topic">
+                            Premium Car Wash Service
+                        </h3>
+                        <h1 className="p-4 text-4xl font-bold text-center text-white bg-red-600 rounded-full shadow-lg discount-percentage">
+                            25% OFF
+                        </h1>
+                        <p className="mt-5 font-sans text-xl text-justify description">
+                            Treat your car to a luxurious wash and shine with our premium service. For a limited time, enjoy a 25% discount.
+                            Our skilled professionals will ensure your car looks spotless inside and out. Don't miss this chance to keep your vehicle gleaming!
+                        </p>
+                        <p className="p-4 mt-8 font-sans text-lg font-bold text-center text-blue-600 uppercase rounded">
+                            Valid from September 1, 2024 to <br/> September 30, 2024
+                        </p>
                         </div>
                     </div>
                 </div>
 
 
-                {/*Box 5*/}
-                <div className="
-                    p-10 bg-slate-200 w-[1080px] ml-[150px] mb-[100px] rounded-lg shadow-2xl cursor-pointer	
-                    ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-slate-500 duration-300
-                    ">
-                    <div className="grid w-full grid-cols-2 gap-5">
-                        <div className="w-full h-full">
-                            <img 
-                                src={offer5}
-                                alt="offer5" 
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-                        <div className="w-full h-full">
-                            <h3 className="my-10 font-sans text-3xl font-bold tracking-wide text-center uppercase">
-                                Get 50% OFF on Oil Change Services!
-                            </h3>
 
-                            <p className="mb-20 font-sans text-xl text-center">
-                                Drive into savings with our limited-time offer! 
-                                Enjoy a 50% discount on your next oil change at Wash and Go Service Center. 
-                                Whether you're cruising in a luxury vehicle or an SUV, our expert technicians 
-                                will ensure your car runs smoothly. 
-                                Don't miss out on this incredible deal because when it comes to your car, 
-                                only the best will do. Be Fit Be Quick with Wash and Go Service Center!
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
+
+
+
+
+
+
 
             </div>
 

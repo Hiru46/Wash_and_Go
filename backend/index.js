@@ -16,12 +16,6 @@ app.use('/offers', OfferRouter);
 
 
 
-
-
-
-
-
-
 // MongoDB connection
 mongoose
     .connect(

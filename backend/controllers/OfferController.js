@@ -59,21 +59,26 @@ const addOffer = async (req, res) => {
 // };
 
 // Update an offer
-// const updateOffer = async (req, res) => {
-//   const id = req.params.id;
-//   const { title, description, discountPercentage, expirationDate, startDate, imageUrl } = req.body;
+const updateOffer = async (req, res) => {
+  const id = req.params.id;
+  const { title, description, discountPercentage, expirationDate, startDate, imageUrl } = req.body;
 
-//   try {
-//     const updatedOffer = await Offer.findByIdAndUpdate(id, { title, description, discountPercentage, expirationDate, startDate, imageUrl }, { new: true });
-//     if (!updatedOffer) {
-//       return res.status(404).json({ message: 'Offer not found' });
-//     }
-//     return res.status(200).json({ offer: updatedOffer });
-//   } catch (err) {
-//     console.log(err);
-//     return res.status(500).json({ message: 'Error updating offer' });
-//   }
-// };
+  try {
+    const updatedOffer = await Offer.findByIdAndUpdate(
+      id,
+      { title, description, discountPercentage, expirationDate, startDate, imageUrl },
+      { new: true }
+    );
+    if (!updatedOffer) {
+      return res.status(404).json({ message: 'Offer not found' });
+    }
+    return res.status(200).json({ offer: updatedOffer });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: 'Error updating offer' });
+  }
+};
+
 
 // Delete an offer
 const deleteOffer = async (req, res) => {
@@ -95,6 +100,6 @@ module.exports = {
   getAllOffers,
   addOffer,
   // getOfferById,
-  // updateOffer,
+  updateOffer,
   deleteOffer
 };
