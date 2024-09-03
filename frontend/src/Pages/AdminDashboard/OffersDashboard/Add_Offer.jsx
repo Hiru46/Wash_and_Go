@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import offerDash from "../../../assets/Offers/offerDash.jpeg";
 
 function Add_Offer() {
@@ -11,6 +12,8 @@ function Add_Offer() {
     startDate: '',
     image: null // Changed to handle file upload
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +46,8 @@ function Add_Offer() {
 
       if (response.status === 201) {
         alert('Offer published successfully!');
-      }
-      else{
+        navigate('/offers_dash'); // Navigate back to the OffersDashboard page
+      } else {
         console.log('Failed to publish offer, response:', response);
       }
     } catch (error) {

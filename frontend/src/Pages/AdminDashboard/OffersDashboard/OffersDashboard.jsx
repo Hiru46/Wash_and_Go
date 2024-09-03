@@ -28,7 +28,7 @@ function OffersDashboard() {
       const response = await axios.delete(`http://localhost:5000/offers/${id}`);
       if (response.status === 200) {
         alert("Offer deleted successfully!");
-        // Update the offers state to remove the deleted offer
+      // Update the offers state to remove the deleted offer
         setOffers(offers.filter((offer) => offer._id !== id));
       } else {
         alert("Failed to delete offer");
@@ -108,7 +108,7 @@ function OffersDashboard() {
                           {offer.status || "Published"}
                         </span>
                       </td>
-                      <td className="px-2 py-4">{offer.description}</td>
+                      <td className="max-w-xs px-2 py-4 overflow-hidden text-ellipsis whitespace-nowrap">{offer.description}</td>
                       <td className="px-2 py-4">
                         {new Date(offer.expirationDate).toLocaleDateString()}
                       </td>
