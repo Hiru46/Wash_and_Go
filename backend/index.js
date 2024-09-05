@@ -7,12 +7,15 @@ const app = express();
 // Import routes
 const AdminCustomersManage = require("./routes/UserRouter");
 const OfferRouter = require('./routes/OfferRouter');
+const ReferralRouter = require('./routes/ReferralRoute');
+
 
 // Middleware
 app.use(express.json());
 app.use(cors());
 app.use("/AdminCustomers", AdminCustomersManage);
 app.use('/offers', OfferRouter);
+app.use('/referrals', ReferralRouter); // Add this line to use the ReferralRouter
 
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

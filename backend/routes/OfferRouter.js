@@ -13,4 +13,5 @@ router.post('/', OfferController.addOffer);
 router.get('/:id', OfferController.getOfferById);
 router.put('/:id', OfferController.updateOffer);
 router.delete('/:id', OfferController.deleteOffer);
+
 module.exports = router;

@@ -25,6 +25,8 @@ import Offers from './Pages/Offers/Offers.jsx';
 import OffersDashboard from './Pages/AdminDashboard/OffersDashboard/OffersDashboard.jsx';
 import Add_Offer from './Pages/AdminDashboard/OffersDashboard/Add_Offer.jsx';
 import UpdateOffers from './Pages/AdminDashboard/OffersDashboard/UpdateOffers.jsx';
+import ReferralDashboard from './Pages/AdminDashboard/ReferralDashboard/ReferralDashboard.jsx';
+import AddReferral from './Pages/AdminDashboard/ReferralDashboard/AddReferral.jsx';
 
 
 
@@ -121,6 +123,14 @@ const router = createBrowserRouter([
   {
     path: "/update_offer/:id",
     element: <UpdateOffers/>,
+  },
+  {
+    path: "/referrals_dash",
+    element: <ReferralDashboard />,
+  },
+  {
+    path: "/add_referral",
+    element: <AddReferral />,
   },
 
 
