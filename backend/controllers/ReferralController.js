@@ -21,6 +21,7 @@ const addReferral = async (req, res) => {
   try {
     const newReferral = new Referral({
       referralCode,
+      discount,
       isActive
     });
     await newReferral.save();
@@ -55,7 +56,7 @@ const updateReferral = async (req, res) => {
   try {
     const updatedReferral = await Referral.findByIdAndUpdate(
       id,
-      { referralCode, isActive },
+      { referralCode,discount, isActive },
       { new: true }
     );
     if (!updatedReferral) {

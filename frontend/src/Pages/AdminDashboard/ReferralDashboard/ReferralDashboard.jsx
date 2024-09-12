@@ -66,6 +66,7 @@ function ReferralDashboard() {
                   <th className="px-2 py-4">Referral ID</th>
                   <th className="px-2 py-4">Referral Code</th>
                   <th className="px-2 py-4">Active</th>
+                  <th className="px-2 py-4">Discount</th>
                   <th className="px-2 py-4">Actions</th>
                 </tr>
               </thead>
@@ -86,6 +87,7 @@ function ReferralDashboard() {
                           {referral.isActive ? "Active" : "Inactive"}
                         </span>
                       </td>
+                      <td claaName="px-2 py-4">{referral.discount}</td>
                       <td className="flex items-center px-2 py-4 space-x-2">
                         
                         {/* Update Button */}

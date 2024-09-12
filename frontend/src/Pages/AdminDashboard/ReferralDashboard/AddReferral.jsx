@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function AddReferral() {
   const [referral, setReferral] = useState({
     referralCode: '',
+    discount: 0,
     isActive: true // Default to active
   });
 
@@ -44,6 +45,14 @@ function AddReferral() {
           placeholder="Referral Code"
           className="p-3 mb-4 border rounded-lg"
           value={referral.referralCode}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="discount"
+          placeholder="Discount Amount"
+          className="p-3 mb-4 border rounded-lg"
+          value={referral.discount}
           onChange={handleChange}
         />
         <div className="flex items-center mb-4">

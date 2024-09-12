@@ -10,7 +10,12 @@ const referralSchema = new Schema({
   isActive: {
     type: Boolean,
     default: true // Default to true when a new referral is created
+  },
+  discount:{
+    type:Number,
+    default:true
   }
+
 });
 
 module.exports = mongoose.model('Referral', referralSchema);
