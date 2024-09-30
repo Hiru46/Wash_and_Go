@@ -11,9 +11,10 @@ import { Link } from "react-router-dom";
 
 function HomeNavbar() {
     return (
-        <div className=" h-[25vh] ">
+        <header className="top-0 left-0  w-full z-50">
+        <div className="h-[26vh] ">
             {/* Header Section */}
-            <div className="z-40 absolute w-[280px] h-[132px] bg-[#006AFF] angled-rectangle1">
+            <div className=" z-40 absolute w-[280px] h-[132px] bg-[#006AFF] angled-rectangle1">
                 <h1 className="text-white font-bold text-6xl absolute top-[48px] left-[38px]">
                     LOGO
                 </h1>
@@ -109,6 +110,7 @@ function HomeNavbar() {
 
 
         </div>
+        </header>
     )
 }
 

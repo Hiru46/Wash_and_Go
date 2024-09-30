@@ -25,7 +25,7 @@ export default function HeroSection() {
     ];
 
     return (
-        <div className="relative w-full h-full min-h-[75vh] overflow-hidden">
+        <div className=" relative w-full h-full min-h-[75vh] overflow-hidden">
             <Carousel
                 showThumbs={false}
                 autoPlay
