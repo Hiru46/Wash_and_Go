@@ -12,17 +12,30 @@ function UpdateOffers() {
   const [discountPercentage, setDiscountPercentage] = useState(offer.discountPercentage);
   const [expirationDate, setExpirationDate] = useState(offer.expirationDate);
   const [startDate, setStartDate] = useState(offer.startDate);
-  const [imageUrl, setImageUrl] = useState(offer.imageUrl);
+  const [newImage, setNewImage] = useState(null); // State for new image
+
+  // Handle image file change
+  const handleImageChange = (e) => {
+    setNewImage(e.target.files[0]);
+  };
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/offers/${offer._id}`, {
-        title,
-        description,
-        discountPercentage,
-        expirationDate,
-        startDate,
-        imageUrl,
+      const formData = new FormData(); // Use FormData for handling file upload
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('discountPercentage', discountPercentage);
+      formData.append('expirationDate', expirationDate);
+      formData.append('startDate', startDate);
+
+      if (newImage) {
+        formData.append('image', newImage); // Append the new image file
+      }
+
+      const response = await axios.put(`http://localhost:5000/offers/${offer._id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
       if (response.status === 200) {
@@ -84,16 +97,18 @@ function UpdateOffers() {
           className="w-full p-2 border rounded-lg"
         />
       </div>
+      
+      {/* Image Upload */}
       <div className="mb-4">
-        <label className="block mb-2 text-sm font-medium text-gray-700">Image URL</label>
+        <label className="block mb-2 text-sm font-medium text-gray-700">Upload New Image</label>
         <input
-          type="text"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
           className="w-full p-2 border rounded-lg"
         />
       </div>
-      
+
       <button
         onClick={handleUpdate}
         className="px-4 py-2 font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600"

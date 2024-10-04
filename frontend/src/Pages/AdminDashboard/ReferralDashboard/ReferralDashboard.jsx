@@ -63,10 +63,12 @@ function ReferralDashboard() {
             <table className="w-full table-auto">
               <thead>
                 <tr className="text-left border-b">
-                  <th className="px-2 py-4">Referral ID</th>
                   <th className="px-2 py-4">Referral Code</th>
                   <th className="px-2 py-4">Active</th>
                   <th className="px-2 py-4">Discount</th>
+                  <th className="px-2 py-4">Reward Type</th>
+                  <th className="px-2 py-4">Date of Referral</th>
+                  <th className="px-2 py-4">Expiry Date</th>
                   <th className="px-2 py-4">Actions</th>
                 </tr>
               </thead>
@@ -74,7 +76,6 @@ function ReferralDashboard() {
                 {referrals.length > 0 ? (
                   referrals.map((referral, index) => (
                     <tr key={index} className="border-b">
-                      <td className="px-2 py-4">{referral._id}</td>
                       <td className="px-2 py-4">{referral.referralCode}</td>
                       <td className="px-2 py-4">
                         <span
@@ -87,7 +88,10 @@ function ReferralDashboard() {
                           {referral.isActive ? "Active" : "Inactive"}
                         </span>
                       </td>
-                      <td claaName="px-2 py-4">{referral.discount}</td>
+                      <td className="px-2 py-4">{referral.discount}</td>
+                      <td className="px-2 py-4">{referral.reward_type}</td>
+                      <td className="px-2 py-4">{new Date(referral.date_of_referral).toLocaleDateString()}</td>
+                      <td className="px-2 py-4">{new Date(referral.expiry_date).toLocaleDateString()}</td>
                       <td className="flex items-center px-2 py-4 space-x-2">
                         
                         {/* Update Button */}
@@ -115,7 +119,7 @@ function ReferralDashboard() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="4" className="px-2 py-4 text-center">
+                    <td colSpan="8" className="px-2 py-4 text-center">
                       No referrals found.
                     </td>
                   </tr>

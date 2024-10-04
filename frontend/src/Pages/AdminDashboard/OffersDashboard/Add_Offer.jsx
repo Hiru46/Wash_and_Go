@@ -10,7 +10,7 @@ function Add_Offer() {
     discountPercentage: '',
     expirationDate: '',
     startDate: '',
-    image: null // Changed to handle file upload
+    image: null, // For file upload
   });
 
   const navigate = useNavigate(); // Initialize useNavigate
@@ -24,8 +24,32 @@ function Add_Offer() {
     setOffer({ ...offer, image: e.target.files[0] });
   };
 
+  const validateForm = () => {
+    const { title, description, discountPercentage, expirationDate, startDate } = offer;
+    const today = new Date().toISOString().split('T')[0]; // Current date in YYYY-MM-DD format
+
+    // Check if all required fields are filled
+    if (!title || !description || !discountPercentage || !expirationDate || !startDate) {
+      alert('Please fill in all required fields.');
+      return false;
+    }
+
+    // Check if start date is after the current date
+    if (new Date(startDate) <= new Date(today)) {
+      alert('Start date must be after the current date.');
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate the form before submission
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
 
     try {
       const formData = new FormData();
@@ -51,7 +75,7 @@ function Add_Offer() {
         console.log('Failed to publish offer, response:', response);
       }
     } catch (error) {
-      console.error('Error publishing offer:', error.response || error); // Improved error logging
+      console.error('Error publishing offer:', error.response || error);
       alert('Error publishing offer');
     }
   };
@@ -59,6 +83,8 @@ function Add_Offer() {
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col w-1/3 p-8 bg-white rounded-lg shadow-lg">
+        
+        <label className="mb-2 font-semibold">Offer Title</label>
         <input
           type="text"
           name="title"
@@ -67,6 +93,8 @@ function Add_Offer() {
           value={offer.title}
           onChange={handleChange}
         />
+
+        <label className="mb-2 font-semibold">Offer Description</label>
         <input
           type="text"
           name="description"
@@ -75,6 +103,8 @@ function Add_Offer() {
           value={offer.description}
           onChange={handleChange}
         />
+
+        <label className="mb-2 font-semibold">Discount Percentage</label>
         <input
           type="number"
           name="discountPercentage"
@@ -83,6 +113,8 @@ function Add_Offer() {
           value={offer.discountPercentage}
           onChange={handleChange}
         />
+
+        <label className="mb-2 font-semibold">Expiration Date</label>
         <input
           type="date"
           name="expirationDate"
@@ -91,6 +123,8 @@ function Add_Offer() {
           value={offer.expirationDate}
           onChange={handleChange}
         />
+
+        <label className="mb-2 font-semibold">Start Date</label>
         <input
           type="date"
           name="startDate"
@@ -99,6 +133,8 @@ function Add_Offer() {
           value={offer.startDate}
           onChange={handleChange}
         />
+
+        <label className="mb-2 font-semibold">Image Upload</label>
         <input
           type="file"
           name="image"
@@ -106,6 +142,7 @@ function Add_Offer() {
           className="p-3 mb-4 border rounded-lg"
           onChange={handleFileChange}
         />
+
         <button
           className="p-3 text-white bg-black rounded-lg"
           onClick={handleSubmit}

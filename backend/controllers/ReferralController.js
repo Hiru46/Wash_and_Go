@@ -16,13 +16,15 @@ const getAllReferrals = async (req, res) => {
 
 // Create a new referral
 const addReferral = async (req, res) => {
-  const { referralCode, isActive } = req.body;
+  const { referralCode, discount, isActive, reward_type, expiry_date } = req.body;
 
   try {
     const newReferral = new Referral({
       referralCode,
       discount,
-      isActive
+      isActive,
+      reward_type,
+      expiry_date
     });
     await newReferral.save();
     return res.status(201).json({ referral: newReferral });
@@ -51,12 +53,12 @@ const getReferralById = async (req, res) => {
 // Update a referral
 const updateReferral = async (req, res) => {
   const id = req.params.id;
-  const { referralCode, isActive } = req.body;
+  const { referralCode, discount, isActive, reward_type, expiry_date } = req.body;
 
   try {
     const updatedReferral = await Referral.findByIdAndUpdate(
       id,
-      { referralCode,discount, isActive },
+      { referralCode, discount, isActive, reward_type, expiry_date },
       { new: true }
     );
     if (!updatedReferral) {

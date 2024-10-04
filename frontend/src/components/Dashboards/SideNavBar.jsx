@@ -33,6 +33,9 @@ export default function SideNavBar() {
             <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
               <SideNavLinks linkName="OFFERS" url="/offers_dash" />
             </li>
+            <li className="px-4 py-3 hover:bg-gray-700 hover:duration-300">
+              <SideNavLinks linkName="Referrals" url="/referrals_dash" />
+            </li>
           </ul>
         </nav>
       </aside>

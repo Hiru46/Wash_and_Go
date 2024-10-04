@@ -61,7 +61,10 @@ const getOfferById = async (req, res) => {
 // Update an offer
 const updateOffer = async (req, res) => {
   const id = req.params.id;
-  const { title, description, discountPercentage, expirationDate, startDate, imageUrl } = req.body;
+  const { title, description, discountPercentage, expirationDate, startDate } = req.body;
+
+  // Check if a new file is uploaded, otherwise keep the existing imageUrl
+  const imageUrl = req.file ? req.file.path : req.body.imageUrl;
 
   try {
     const updatedOffer = await Offer.findByIdAndUpdate(
@@ -78,6 +81,7 @@ const updateOffer = async (req, res) => {
     return res.status(500).json({ message: 'Error updating offer' });
   }
 };
+
 
 
 // Delete an offer
