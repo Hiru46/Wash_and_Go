@@ -11,35 +11,52 @@ app.use(express.json());
 app.use(cors());
 app.use("/AdminCustomers", AdminCustomersManage);
 
+const { createMockModel } = require("./devDatabase");
+let useDevDB = false;
 
 
 
 
 
+// MongoDB connection with fallback to dev database
+const connectDatabase = async () => {
+    try {
+        await mongoose.connect(
+            process.env.MONGO_URI ||
+            "mongodb+srv://5gang:ocjaIzGYFjpYlih2@cluster0.zk7k9.mongodb.net/Wash_and_GO"
+        );
+        console.log("✓ Connected to MongoDB Atlas");
+    } catch (err) {
+        console.warn("✗ MongoDB connection failed. Switching to development file-based database...");
+        console.warn("  Error:", err.message);
+        useDevDB = true;
+        console.log("✓ Using dev database (JSON file storage)");
+    }
+    
+    // Start server regardless of DB connection
+    app.listen(5000, () => {
+        console.log("Server is running on port 5000");
+    });
+};
+
+connectDatabase();
+
+// Model selection will be done after connectDatabase attempt
+let User, Admin;
+
+setImmediate(async () => {
+    require("./models/Register");
+    const RealUser = mongoose.model("Register");
+    const MockUser = createMockModel("Register");
+    User = useDevDB ? MockUser : RealUser;
+    
+    require("./models/Admin");
+    const RealAdmin = mongoose.model("Admin");
+    const MockAdmin = createMockModel("Admin");
+    Admin = useDevDB ? MockAdmin : RealAdmin;
+});
 
 
-
-
-// MongoDB connection
-mongoose
-    .connect(
-        process.env.MONGO_URI ||
-        "mongodb+srv://5gang:ocjaIzGYFjpYlih2@cluster0.zk7k9.mongodb.net/Wash_and_GO"
-    )
-    .then(() => console.log("Connected to MongoDB"))
-    .then(() => {
-        app.listen(5000, () => {
-            console.log("Server is running on port 5000");
-        });
-    })
-    .catch((err) => console.log(err));
-
-
-
-
-
-require("./models/Register");
-const User = mongoose.model("Register");
 
 app.post("/register", async (req, res) => {
 
@@ -76,8 +93,6 @@ app.post("/register", async (req, res) => {
 // Login route
 
 
-require("./models/Admin");
-const Admin = mongoose.model("Admin")
 
 
 
