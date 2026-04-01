@@ -20,12 +20,11 @@ let useDevDB = false;
 
 // MongoDB connection with fallback to dev database
 const connectDatabase = async () => {
+    const mongoUri = process.env.MONGO_URI || "mongodb://localhost:27017/Wash_and_GO";
+    
     try {
-        await mongoose.connect(
-            process.env.MONGO_URI ||
-            "mongodb+srv://5gang:ocjaIzGYFjpYlih2@cluster0.zk7k9.mongodb.net/Wash_and_GO"
-        );
-        console.log("✓ Connected to MongoDB Atlas");
+        await mongoose.connect(mongoUri);
+        console.log("✓ Connected to MongoDB");
     } catch (err) {
         console.warn("✗ MongoDB connection failed. Switching to development file-based database...");
         console.warn("  Error:", err.message);
